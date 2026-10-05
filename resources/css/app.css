@@ -1,0 +1,45 @@
+@import 'tailwindcss';
+@custom-variant dark (&:is(.dark *));
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+@source '../**/*.jsx';
+
+@theme {
+    --font-sans: 'Plus Jakarta Sans', 'Kantumruy Pro', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --animate-marquee: marquee 30s linear infinite;
+
+    @keyframes marquee {
+        0% { transform: translateX(0%); }
+        100% { transform: translateX(-50%); }
+    }
+
+    @keyframes reviews-left {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+    @keyframes reviews-right {
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(0); }
+    }
+}
+
+.animate-reviews-left {
+    animation: reviews-left 150s linear infinite;
+}
+.animate-reviews-left:hover {
+    animation-play-state: paused;
+}
+
+.animate-reviews-right {
+    animation: reviews-right 150s linear infinite;
+}
+.animate-reviews-right:hover {
+    animation-play-state: paused;
+}
+
